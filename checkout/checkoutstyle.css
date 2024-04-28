@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
 .checkout-container{
     display: flex;
     flex-direction: column;
@@ -20,12 +24,11 @@
 }
 .order-container{
     background-color: lightblue;
-    height: 300px;
+    height: 200px;
     width: 35%;
     display: flex;
-    flex-direction: column;
     overflow: auto;
-    direction: rtl;
+    justify-content: flex-start;
 }
 .order-text-container{
     background-color: lightpink;
@@ -38,21 +41,78 @@
     width: 50%;
     text-align: center;
 }
-.itemlist-container{
-    background-color: lightpink;
-    height: 100px;
-    margin-top: 10px;
-    overflow: auto;
+.item-container{
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    width: 620px;
 }
-.itemlist-text{
+.itemoption-container{
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.videogame-text{
+    font-family: 'Arvo', sans-serif;
+    font-size: 19px;
+    font-style: oblique;
+}
+.no-bullet{
     list-style-type: none;
-    text-align: left;
+}
+.qtyinput-container{
+    background-color: white;
+    height: 25px;
+    width: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    margin-top: 15px;
+}
+.qtyinput-container span{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.qtyinput-container span.num{
+    border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2);
+    pointer-events: none;
 }
 li:not(:last-child){
     margin-bottom: 7px;
 }
 .test{
     background-color: gray;
+}
+
+.ordfooter-container{
+    background-color: lightgray;
+    width: 35%;
+    height: 55px;
+    display: flex;
+    
+    
+}
+.footer-text{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-style: oblique;
+}
+.footer-rightsection{
+    background-color: red;
+    display: flex;
+    flex: 1;
+    margin-left: 15%;
 }
 
 .bill-container{
