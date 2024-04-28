@@ -1,0 +1,67 @@
+.checkout-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+    
+}
+
+.orderheader-container{
+    background-color: lightpink;
+    border-style:outset;
+    border-color: gray;
+    height: 40px;
+    width: 35%;
+}
+.orderheader-text{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+.order-container{
+    background-color: lightblue;
+    height: 300px;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    direction: rtl;
+}
+.order-text-container{
+    background-color: lightpink;
+    height: 10%;
+    border-style: solid;
+    border-color: black;
+}
+.order-text{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+.itemlist-container{
+    background-color: lightpink;
+    height: 100px;
+    margin-top: 10px;
+    overflow: auto;
+}
+.itemlist-text{
+    list-style-type: none;
+    text-align: left;
+}
+li:not(:last-child){
+    margin-bottom: 7px;
+}
+.test{
+    background-color: gray;
+}
+
+.bill-container{
+    background-color: lightpink;
+    width: 45%;
+    margin-top: 30px;
+}
+.payment-container{
+    background-color: lightblue;
+    width: 45%;
+    margin-top: 30px;
+}
