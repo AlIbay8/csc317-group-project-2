@@ -1,0 +1,18 @@
+body {
+    margin: 0px;
+    font-size: 1.2rem;
+    font-family: "Exo 2", sans-serif;
+    background-image: url("./resources/painted_plaster_wall_ao_1k.jpg");
+}
+
+.sticky-navbar {
+    padding: 10px;
+    top: 0;
+    position:-webkit-sticky;
+    position: sticky;
+    background-color: lightblue;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
