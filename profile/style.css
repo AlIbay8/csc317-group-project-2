@@ -16,3 +16,23 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+.account {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
+}
+
+.account-details {
+    border: 2px solid red;
+    min-width: 20%;
+    min-height: 70vh;
+}
+
+.account-settings {
+    border: 2px solid blue;
+    min-width: 50%;
+    min-height: 100vh;
+}
