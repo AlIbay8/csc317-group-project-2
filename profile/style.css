@@ -29,10 +29,26 @@ body {
     border: 2px solid red;
     min-width: 20%;
     min-height: 70vh;
+    max-width: 20%;
+    padding: 0rem 1rem;
 }
 
 .account-settings {
     border: 2px solid blue;
     min-width: 50%;
     min-height: 100vh;
+    padding: 0rem 1rem;
+}
+
+.detail-title {
+    text-align: center;
+}
+
+.pfp-container {
+    margin: 2rem;
+}
+
+.pfp {
+    border-radius: 100%;
+    width: 100%;
 }
