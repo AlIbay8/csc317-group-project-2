@@ -22,10 +22,12 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    width: 50%;
 }
 
 .search-bar{
     height: 35px;
+    width: 100%;
     padding-left: 10px;
     font-size: 16px;
     border-width: 1px;
@@ -38,12 +40,22 @@ body {
 input.search-bar{
     color:#66c0f4 ;
 }
-.search-button {
+.nav-btn {
     background-color: #66c0f4;
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
     font-size: 1.5rem;
+}
+.nav-btn:hover {
+    filter: brightness(120%);
+    box-shadow: 5px 5px 5px black;
+    animation: 150ms lighten ease-out;
+}
+
+.nav-btn:active {
+    filter: brightness(75%);
+    box-shadow: 1px 1px 5px black;
 }
 
 .account {
