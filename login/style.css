@@ -58,7 +58,7 @@ input.search-bar{
     box-shadow: 1px 1px 5px black;
 }
 
-.account {
+.body-container {
     margin: 2rem 0px;
     display: flex;
     justify-content: center;
@@ -69,6 +69,9 @@ input.search-bar{
 
 .section-box {
     background-color: #16202d;
+    width: 35%;
+    min-width: 330px;
+    max-width: 600px;
 }
 
 .section-header {
@@ -84,37 +87,10 @@ input.search-bar{
     padding: 0rem 1rem;
 }
 
-.account-details {
-    width: 20%;
-    min-width: 400px;
-    min-height: 70vh;
-    max-width: 20%;
-}
-
-.information > h3 {
-    margin-bottom: 0px;
-}
-
-.information > ul {
-    margin-top: 0px;
-}
-
-.account-settings {
-    min-width: 50%;
-}
-
-.detail-title {
+.section-title {
     text-align: center;
 }
 
-.pfp-container {
-    margin: 2rem;
-}
-
-.pfp {
-    border-radius: 100%;
-    width: 100%;
-}
 
 .setting-single {
     display: flex;
@@ -131,7 +107,7 @@ input.search-bar{
     min-width: 10rem;
 }
 
-.setting-text > input {
+.input-field > input {
     width:100%;
     font-size: 2rem;
     color: #ffffff;
@@ -161,6 +137,8 @@ input.search-bar{
 .submit-btn {
     display: block;
     margin: 1rem auto;
+    margin-top: 2rem;
+    padding: 0.5rem 0px;
     font-size: 1.5rem;
     color: #ffffff;
     border: none;
