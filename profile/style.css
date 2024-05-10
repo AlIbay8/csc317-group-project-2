@@ -158,7 +158,7 @@ input.search-bar{
     margin-left: auto;
 }
 
-.submit-btn {
+#submit-btn {
     display: block;
     margin: 1rem auto;
     font-size: 1.5rem;
@@ -181,13 +181,13 @@ input.search-bar{
     }
 }
 
-.submit-btn:hover {
+#submit-btn:hover {
     filter: brightness(120%);
     box-shadow: 5px 5px 5px black;
     animation: 150ms lighten ease-out;
 }
 
-.submit-btn:active {
+#submit-btn:active {
     filter: brightness(75%);
     box-shadow: 1px 1px 5px black;
 }
