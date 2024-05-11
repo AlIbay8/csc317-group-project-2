@@ -18,14 +18,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
             "pfp": ""
         }
         let image = pfp_input.files[0];
-        //const Get
-        let reader = new FileReader();
-        reader.onload = function(e) {
-            input_info.pfp = e.target.result;
-            console.log(pfp_input.files[0])
-            console.log(e.target.result)
-        }
-        reader.readAsDataURL(image);
+        const getImageData = (imageFile) => new Promise((resolve, reject) => {
+            let reader = new FileReader();
+            reader.onload = (event) => resolve(event.target.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(imageFile)
+        })
+        getImageData(image).then(function(data) {
+            input_info.pfp = data
+            // temporary code, need to promisify getNewInfo
+            console.log(data);
+            pfp_display.src = data
+        });
         return input_info
     }
 
