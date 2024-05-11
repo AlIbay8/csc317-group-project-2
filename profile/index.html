@@ -32,7 +32,7 @@
                 </div>
                 <div class="section-content">
                     <div class="pfp-container">
-                        <img class="pfp" src="./resources/EidenUpscaleRedBG.png">
+                        <img id="pfpDisplay" src="./resources/EidenUpscaleRedBG.png">
                     </div>
                     <div class="information">
                         <h3>Name</h3>
@@ -57,7 +57,7 @@
                 <div class="section-content">
                     <div class="setting-single">
                         <p>Change profile picture</p>
-                        <input type="file">
+                        <input type="file" id="pfpInput" accept=".jpg, .jpeg, .png">
                     </div>
                     <div class="setting-text">
                         <p>Change name:</p>
@@ -71,7 +71,7 @@
                         <p>Change bio:</p>
                         <textarea id="bioInput"></textarea>
                     </div>
-                    <button id="submit-btn">Save changes</button>
+                    <button id="submitBtn">Save changes</button>
                 </div>
             </section>
         </div>
