@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
             "pfp": ""
         }
         let image = pfp_input.files[0];
+        console.log(image.size)
+        if (image.size>1000000) {
+            throw "Image size is >1 MB"
+        }
         const getImageData = (imageFile) => new Promise((resolve, reject) => {
             let reader = new FileReader();
             reader.onload = (event) => resolve(event.target.result);
@@ -31,7 +35,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             console.log(data);
             // pfp_display.src = data
         });
-        throw "error"
         return input_info
     }
 
