@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const error_message = document.getElementById("errorMessage")
 
     async function getNewInfo() {
+        let errors = [];
+        const is_email = /^.+@.+$/;
         let input_info = {
             "name": name_input.value,
             "email": email_input.value,
@@ -19,9 +21,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
             "pfp": ""
         }
         let image = pfp_input.files[0];
-        console.log(image.size)
         if (image.size>1000000) {
-            throw "Image size is >1 MB"
+            errors.push("Image size is >1 MB")
+        }
+        if (!is_email.test(input_info.email)) {
+            errors.push("Invalid email address")
         }
         const getImageData = (imageFile) => new Promise((resolve, reject) => {
             let reader = new FileReader();
@@ -35,6 +39,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             console.log(data);
             // pfp_display.src = data
         });
+        if (errors.length>0) {
+            throw ("Error: " + errors.join(", Error: "))
+        }
         return input_info
     }
 
@@ -45,7 +52,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             updated_info = await getNewInfo();
         } catch (error) {
             console.log("Error: ", error)
-            error_message.textContent = "Error: " + error
+            error_message.textContent = error
             error_message.style.display = "flex";
             return
         }
