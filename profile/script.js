@@ -11,6 +11,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const pfp_input = document.getElementById("pfpInput");
     const error_message = document.getElementById("errorMessage")
 
+    function loadDbData(user_id) {
+        // load and initialize data from database here
+        // needs to be called on page load (to fill input forms with existing data)
+    }
+
+    function saveDbData(user_id, data) {
+        // send data to database here
+    }
+
     async function getNewInfo() {
         let errors = [];
         const is_email = /^.+@.+$/;
@@ -60,5 +69,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         name_label.innerText = updated_info.name
         email_label.innerText = updated_info.email
         bio_label.innerText = updated_info.bio
+        saveDbData(0, 0)
     })
 });
