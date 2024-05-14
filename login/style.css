@@ -81,7 +81,39 @@ input.search-bar{
 
 .section-header > h2 {
     margin: 0;
-} 
+}
+
+@keyframes show {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.errorBox {
+    text-align: center;
+    background-color: #f74641;
+    border: #9e0b0b 5px solid;
+    border-radius: 1rem;
+    height: 3rem;
+    margin-top: 1rem;
+    animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top center;
+}
+
+#loginErrorMessage {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#signupErrorMessage {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
 
 .section-content {
     padding: 0rem 1rem;
