@@ -2,16 +2,16 @@
 <html>
     <head>
         <title>Profile</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="/css/profile.css" rel="stylesheet" type="text/css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <script src="script.js"></script>
+        <script src="/js/profile.js"></script>
     </head>
     <body>
         <nav class="sticky-navbar">
             <div class="title">
-                <h1>E-commerce</h1>
+                <a href="/"><h1>E-commerce</h1></a>
             </div>
             <div class="search">
                 <input class="search-bar" type="text" placeholder="Search...">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="section-content">
                     <div class="pfp-container">
-                        <img id="pfpDisplay" src="./resources/EidenUpscaleRedBG.png">
+                        <img id="pfpDisplay" src="/resources/EidenUpscaleRedBG.png">
                     </div>
                     <div class="information">
                         <h3>Name</h3>
@@ -47,6 +47,9 @@
                         <ul>
                             <li id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Massa ultricies mi quis hendrerit dolor magna eget.</li>
                         </ul>
+                    </div>
+                    <div class="logout">
+                        <a href="/auth/logout"><button id="logoutBtn">Log out</button></a>
                     </div>
                 </div>
             </section>

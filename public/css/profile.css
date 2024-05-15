@@ -58,7 +58,7 @@ input.search-bar{
     box-shadow: 1px 1px 5px black;
 }
 
-.body-container {
+.account {
     margin: 2rem 0px;
     display: flex;
     justify-content: center;
@@ -69,9 +69,6 @@ input.search-bar{
 
 .section-box {
     background-color: #16202d;
-    width: 35%;
-    min-width: 330px;
-    max-width: 600px;
 }
 
 .section-header {
@@ -81,6 +78,55 @@ input.search-bar{
 
 .section-header > h2 {
     margin: 0;
+} 
+
+.section-content {
+    padding: 0rem 1rem;
+}
+
+.account-details {
+    width: 20%;
+    min-width: 400px;
+    min-height: 70vh;
+    max-width: 20%;
+}
+
+.information > h3 {
+    margin-bottom: 0px;
+}
+
+.information > ul {
+    margin-top: 0px;
+}
+
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#logoutBtn {
+
+}
+
+.account-settings {
+    min-width: 50%;
+}
+
+.detail-title {
+    text-align: center;
+}
+
+.pfp-container {
+    margin: 2rem;
+}
+
+#pfpDisplay {
+    border-radius: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 @keyframes show {
@@ -90,11 +136,11 @@ input.search-bar{
     }
 }
 
-.errorBox {
+#errorMessage {
+    text-align: center;
     display: none;
     justify-content: center;
     align-items: center;
-    text-align: center;
     background-color: #f74641;
     border: #9e0b0b 5px solid;
     border-radius: 1rem;
@@ -105,27 +151,6 @@ input.search-bar{
     transform: rotateX(-90deg);
     transform-origin: top center;
 }
-
-#loginErrorMessage {
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-#signupErrorMessage {
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.section-content {
-    padding: 0rem 1rem;
-}
-
-.section-title {
-    text-align: center;
-}
-
 
 .setting-single {
     display: flex;
@@ -142,7 +167,7 @@ input.search-bar{
     min-width: 10rem;
 }
 
-.input-field > input {
+.setting-text > input {
     width:100%;
     font-size: 2rem;
     color: #ffffff;
@@ -169,18 +194,24 @@ input.search-bar{
     margin-left: auto;
 }
 
-.submit-btn {
+#submitBtn, #logoutBtn {
     display: block;
     margin: 1rem auto;
-    margin-top: 2rem;
-    padding: 0.5rem 0px;
     font-size: 1.5rem;
     color: #ffffff;
     border: none;
-    background: linear-gradient(to right, #47bfff 0%, #1a44c2 60%);
     background-position: 25%;
     background-size: 330% 100%;
     width: 10rem;
+    height: 3rem;
+}
+
+#submitBtn {
+    background: linear-gradient(to right, #47bfff 0%, #1a44c2 60%);
+}
+
+#logoutBtn {
+    background: linear-gradient(to right, #d43a2c 0%, #ab261a 60%);
 }
 
 @keyframes lighten {
@@ -194,13 +225,13 @@ input.search-bar{
     }
 }
 
-.submit-btn:hover {
+#submitBtn:hover, #logoutBtn:hover {
     filter: brightness(120%);
     box-shadow: 5px 5px 5px black;
     animation: 150ms lighten ease-out;
 }
 
-.submit-btn:active {
+#submitBtn:active, #logoutBtn:active {
     filter: brightness(75%);
     box-shadow: 1px 1px 5px black;
 }
