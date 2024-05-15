@@ -91,6 +91,9 @@ input.search-bar{
 }
 
 .errorBox {
+    display: none;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-color: #f74641;
     border: #9e0b0b 5px solid;
