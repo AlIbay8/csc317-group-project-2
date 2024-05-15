@@ -2,16 +2,16 @@
 <html>
     <head>
         <title>Profile</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="/css/login.css" rel="stylesheet" type="text/css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <script src="script.js"></script>
+        <script src="/js/login.js"></script>
     </head>
     <body>
         <nav class="sticky-navbar">
             <div class="title">
-                <h1>E-commerce</h1>
+                <a href="/"><h1>E-commerce</h1></a>
             </div>
             <div class="search">
                 <input class="search-bar" type="text" placeholder="Search...">
@@ -30,8 +30,8 @@
                 <div class="section-header">
                     <h2 class="section-title">Log in</h2>
                 </div>
-                <div class="errorBox" id="loginErrorMessage"><p>Error: email is invalid.</p></div>
-                <div class="section-content">
+                <div class="error-box" id="loginErrorMessage"><p>Error: email is invalid.</p></div>
+                <form class="section-content" id="loginForm">
                     <div class="input-field">
                         <p>Email:</p>
                         <input type="text" id="loginEmail" required>
@@ -40,33 +40,34 @@
                         <p>Password:</p>
                         <input type="password" id="loginPassword" required>
                     </div>
-                    <button class="submit-btn" id="loginBtn">Login</button>
-                </div>
+                    <button type="button" class="submit-btn" id="loginBtn">Login</button>
+                </form>
             </section>
             <section class="section-box signup">
                 <div class="section-header">
                     <h2 class="section-title">Sign up</h2>
                 </div>
-                <div class="errorBox" id="signupErrorMessage"><p>Error: email is invalid.</p></div>
-                <div class="section-content">
+                <div class="error-box" id="signupErrorMessage"><p>Error: email is invalid.</p></div>
+                <div class="success-box" id="signupSuccessMessage"><p>Registration successful! Please log in.</p></div>
+                <form class="section-content" id="signupForm">
                     <div class="input-field">
                         <p>Name:</p>
-                        <input type="text" id="signupName">
+                        <input type="text" id="signupName" autocomplete="off">
                     </div>
                     <div class="input-field">
                         <p>Email:</p>
-                        <input type="text" id="signupEmail" required>
+                        <input type="text" id="signupEmail" required autocomplete="off">
                     </div>
                     <div class="input-field">
                         <p>Password:</p>
-                        <input type="password" id="signupPassword" required>
+                        <input type="password" id="signupPassword" required autocomplete="off">
                     </div>
                     <div class="input-field">
                         <p>Confirm Password:</p>
-                        <input type="password" id="signupConfirmPassword" required>
+                        <input type="password" id="signupConfirmPassword" required autocomplete="off">
                     </div>
-                    <button class="submit-btn" id="signupBtn">Sign up</button>
-                </div>
+                    <button type="button" class="submit-btn" id="signupBtn">Sign up</button>
+                </form>
             </section>
         </div>
         <footer>

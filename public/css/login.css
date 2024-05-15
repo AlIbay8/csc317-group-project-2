@@ -58,7 +58,7 @@ input.search-bar{
     box-shadow: 1px 1px 5px black;
 }
 
-.account {
+.body-container {
     margin: 2rem 0px;
     display: flex;
     justify-content: center;
@@ -69,6 +69,9 @@ input.search-bar{
 
 .section-box {
     background-color: #16202d;
+    width: 35%;
+    min-width: 330px;
+    max-width: 600px;
 }
 
 .section-header {
@@ -78,44 +81,6 @@ input.search-bar{
 
 .section-header > h2 {
     margin: 0;
-} 
-
-.section-content {
-    padding: 0rem 1rem;
-}
-
-.account-details {
-    width: 20%;
-    min-width: 400px;
-    min-height: 70vh;
-    max-width: 20%;
-}
-
-.information > h3 {
-    margin-bottom: 0px;
-}
-
-.information > ul {
-    margin-top: 0px;
-}
-
-.account-settings {
-    min-width: 50%;
-}
-
-.detail-title {
-    text-align: center;
-}
-
-.pfp-container {
-    margin: 2rem;
-}
-
-#pfpDisplay {
-    border-radius: 100%;
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
 }
 
 @keyframes show {
@@ -125,15 +90,11 @@ input.search-bar{
     }
 }
 
-
-
-#errorMessage {
-    text-align: center;
+.error-box, .success-box {
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: #f74641;
-    border: #9e0b0b 5px solid;
+    text-align: center;
     border-radius: 1rem;
     height: 3rem;
     margin-top: 1rem;
@@ -142,6 +103,37 @@ input.search-bar{
     transform: rotateX(-90deg);
     transform-origin: top center;
 }
+
+.error-box {
+    background-color: #f74641;
+    border: #9e0b0b 5px solid;
+}
+
+.success-box {
+    background-color: #8ae590;
+    border: #387c59 5px solid;
+}
+
+#loginErrorMessage {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#signupErrorMessage {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-content {
+    padding: 0rem 1rem;
+}
+
+.section-title {
+    text-align: center;
+}
+
 
 .setting-single {
     display: flex;
@@ -158,7 +150,7 @@ input.search-bar{
     min-width: 10rem;
 }
 
-.setting-text > input {
+.input-field > input {
     width:100%;
     font-size: 2rem;
     color: #ffffff;
@@ -185,9 +177,11 @@ input.search-bar{
     margin-left: auto;
 }
 
-#submitBtn {
+.submit-btn {
     display: block;
     margin: 1rem auto;
+    margin-top: 2rem;
+    padding: 0.5rem 0px;
     font-size: 1.5rem;
     color: #ffffff;
     border: none;
@@ -208,13 +202,13 @@ input.search-bar{
     }
 }
 
-#submitBtn:hover {
+.submit-btn:hover {
     filter: brightness(120%);
     box-shadow: 5px 5px 5px black;
     animation: 150ms lighten ease-out;
 }
 
-#submitBtn:active {
+.submit-btn:active {
     filter: brightness(75%);
     box-shadow: 1px 1px 5px black;
 }
