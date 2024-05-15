@@ -1,0 +1,287 @@
+body {
+    margin: 0px;
+    font-size: 1.5rem;
+    font-family: "Exo 2", sans-serif;
+    background-color: #1b2838;
+    color: #ffffff;
+}
+
+.sticky-navbar {
+    padding: 10px;
+    top: 0;
+    position:-webkit-sticky;
+    position: sticky;
+    background-color: #171d25;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 50%;
+}
+
+.search-bar{
+    height: 35px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 5px rgba(0,0,0,0.10);
+    background-color: #2a475e;
+}
+input.search-bar{
+    color:#66c0f4 ;
+}
+.nav-btn {
+    background-color: #66c0f4;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+.nav-btn:hover {
+    filter: brightness(120%);
+    box-shadow: 5px 5px 5px black;
+    animation: 150ms lighten ease-out;
+}
+
+.nav-btn:active {
+    filter: brightness(75%);
+    box-shadow: 1px 1px 5px black;
+}
+
+.body-container {
+    margin: 2rem 0px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
+}
+
+.hero-banner {
+    background-image: url("https://www.beautylabinternational.com/wp-content/uploads/2020/03/Hero-Banner-Placeholder-Light-1024x480-1.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: auto 100%; /* Resize the background image to cover the entire container */
+    text-align: center;
+    width: 100%;
+    height: 50vh;
+}
+
+
+.section-box {
+    background-color: #16202d;
+    width: 60%;
+    min-width: 45rem;
+    max-width: 77rem;
+}
+
+.section-header {
+    padding: 1rem;
+    background-color: #223d5a;
+}
+
+.section-header > h2 {
+    margin: 0;
+}
+
+@keyframes float {
+    from {
+        box-shadow: 0 0 6px #ffffff;
+        scale: 100%;
+    }
+    to {
+        box-shadow: 0 0 10px #ffffff;
+        scale: 103%;
+    }
+}
+
+.game-grid {
+    display: grid;
+    gap: 1rem 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-template-rows: auto;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    background: #141414;
+    box-shadow: 0 0 6px #ffffff;
+    border-radius: 1rem;
+}
+
+.game-card:hover {
+    box-shadow: 0 0 10px #ffffff;
+    animation: 150ms float ease-out;
+    scale: 103%;
+}
+
+.game-img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    aspect-ratio: 160/127;
+}
+
+.game-info {
+    margin: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-name {
+    margin: 0;
+}
+
+.buy-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.buy-btn {
+    height: 4rem;
+    width: 4rem;
+    background: linear-gradient(to right, #4fc82f 0%, #19b14e 50%);
+    border: none;
+    border-radius: 2px;
+    filter: brightness(120%);
+    box-shadow: 5px 5px 5px black;
+    animation: 150ms lighten ease-out;
+}
+
+@keyframes show {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.errorBox {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f74641;
+    border: #9e0b0b 5px solid;
+    border-radius: 1rem;
+    height: 3rem;
+    margin-top: 1rem;
+    animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+    opacity: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top center;
+}
+
+#loginErrorMessage {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#signupErrorMessage {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-content {
+    padding: 1rem 1rem;
+}
+
+.section-title {
+    text-align: center;
+}
+
+
+.setting-single {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-text {
+    display: flex;
+    align-items: center;
+}
+
+.setting-text > p {
+    min-width: 10rem;
+}
+
+.input-field > input {
+    width:100%;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #101721;
+    border-color: #020304;
+    border-right:0px;
+    border-bottom: 0px;
+    
+}
+
+.setting-bio > textarea {
+    resize: vertical;
+    width: 100%;
+    font-size: 2rem;
+    height: 10rem;
+    color: #ffffff;
+    background-color: #101721;
+    border-color: #020304;
+    border-right:0px;
+    border-bottom: 0px;
+}
+
+.setting-bio > button {
+    margin-left: auto;
+}
+
+.submit-btn {
+    display: block;
+    margin: 1rem auto;
+    margin-top: 2rem;
+    padding: 0.5rem 0px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    border: none;
+    background: linear-gradient(to right, #47bfff 0%, #1a44c2 60%);
+    background-position: 25%;
+    background-size: 330% 100%;
+    width: 10rem;
+}
+
+@keyframes lighten {
+    from {
+        filter: brightness(100%);
+        box-shadow: none;
+    }
+    to {
+        filter: brightness(130%);
+        box-shadow: 5px 5px 5px black;
+    }
+}
+
+.submit-btn:hover, .buy-btn:hover {
+    filter: brightness(130%);
+    box-shadow: 5px 5px 5px black;
+    animation: 150ms lighten ease-out;
+}
+
+.submit-btn:active, .buy-btn:active {
+    filter: brightness(75%);
+    box-shadow: 1px 1px 5px black;
+}
