@@ -8,19 +8,18 @@ router.use(express.json()); // Middleware to parse JSON bodies
 router.get('/login', (req, res) => {
     res.sendFile('login.html', { root: './views' });
 });
-
 // router.get('/register', (req, res) => {
 //     res.sendFile('register.html', { root: './views' });
 // });
 
 router.post('/register', async (req, res) => {
-    const { email, password } = req.body;
+    const { name, email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    db.run('INSERT INTO users (email, password) VALUES (?, ?)', [email, hashedPassword], (err) => {
+    db.run('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, hashedPassword], (err) => {
         if (err) {
-            console.log("register error: ", email, hashedPassword)
-            return res.status(400).json({ message: 'Error occurred during registration' });
+            console.log("register error: ", email, hashedPassword, err)
+            return res.status(400).json({ message: err });
         }
         res.status(200).json({ message: 'Registration successful' });
     });
