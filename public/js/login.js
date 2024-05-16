@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             return
         }
         if (!is_email.test(email_input.value)) {
-            notifyError("Invalid email address")
+            notifyError(signup_error_message, "Invalid email address")
         }
         if (password_input.value !== confirm_input.value) {
             notifyError(signup_error_message, "Passwords do not match")
