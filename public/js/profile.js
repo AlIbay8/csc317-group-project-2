@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 bio_label.textContent = res.bio ? res.bio : "A Steak user"
                 bio_input.value = res.bio ? res.bio : "A Steak user"
 
-                pfp_display.src = res.pfp ? res.pfp : ""
+                pfp_display.src = res.pfp ? res.pfp : "https://t3.ftcdn.net/jpg/05/16/27/58/360_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg"
             })
     }
 

@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/checkout', (req, res) => {
-    res.sendFile(__dirname + '/views/checkout.html')
+    res.sendFile(__dirname + '/views/checkout.html');
 })
 
 app.get('/profile', (req, res) => {

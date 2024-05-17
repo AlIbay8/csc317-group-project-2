@@ -47,16 +47,8 @@ router.post('/update', (req, res) => {
                     return res.status(400).json({message: err})
                 }
             })
-        }
-        
+        }   
     }
-    db.get(`SELECT * FROM users WHERE id = ?`, [req.session.userId], (err, user) => {
-        console.log(user)
-        if (err) {
-            return res.status(400).json({message: "couldn't get user"})
-        }
-    })
-    
 })
 
 module.exports = router;
