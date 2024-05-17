@@ -19,17 +19,6 @@ router.get('/info', (req, res) => {
     })
 })
 
-// router.get('/:id', function(req, res, next) {
-//     let id = req.params.id;
-//     //var user = data.filter(u => u.name == name );
-//     db.get('SELECT * FROM users WHERE id = ?', [id],  (err, user) => {
-//         if (err || !user) {
-//             return res.status(400).json({ message: 'Invalid email or password' });
-//         }
-//     });
-//     return res.json({ message: 'Users Show', data: user });
-// });
-
 router.get('/test', (req, res) => {
     return res.json({
         id: req.session.userId
