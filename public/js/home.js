@@ -37,7 +37,9 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         for (let game of result) {
             let game_in_cart = cart.some(g => g.product_id==game.id)
             const clone = game_template.content.cloneNode(true);
+            let c_card = clone.querySelector(".game-card")
             let c_status = clone.querySelector(".game-status")
+            let c_links = c_card.getElementsByClassName("game-link")
             let c_img = clone.querySelector(".game-img")
             let c_name = clone.querySelector(".game-name")
             let c_price = clone.querySelector(".game-price")
@@ -46,7 +48,11 @@ document.addEventListener("DOMContentLoaded", async (event) => {
             c_img.src = game.img
             c_name.textContent = game.name
             c_price.textContent = "$"+game.price
-            
+     
+            for (let link of c_links) {
+                link.href = `/product/${game.id}`
+            }
+
             if (game_in_cart) {
                 c_buy.disabled = true
                 c_status.style.display = "inline-block";

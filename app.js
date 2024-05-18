@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const path = require("path");
+const db = require('./db/db');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const gameRoutes = require('./routes/game');
@@ -33,7 +34,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/checkout', (req, res) => {
-    res.sendFile(__dirname + '/views/checkout.html');
+    if (req.session.userId) {
+        res.sendFile(__dirname + '/views/checkout.html');
+    } else {
+        res.redirect('/auth/login');
+    }
 })
 
 app.get('/profile', (req, res) => {
@@ -43,6 +48,15 @@ app.get('/profile', (req, res) => {
         res.redirect('/auth/login');
     }
 });
+
+app.get('/product/:id', (req, res) => {
+    db.get('SELECT * FROM products where id = ?', [req.params.id], (err, product) => {
+        if (err || !product) {
+            return res.status(400).json({ message: `Can't get game with id ${req.params.id}` });
+        }
+        res.render(`product`, {game: product})
+    })
+})
 
 const PORT = 3000;
 app.listen(PORT, () => {

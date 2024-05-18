@@ -69,9 +69,9 @@ input.search-bar{
 
 .section-box {
     background-color: #16202d;
-    width: 35%;
+    width: 60%;
     min-width: 330px;
-    max-width: 600px;
+    max-width: 1800px;
 }
 
 .section-header {
@@ -83,98 +83,91 @@ input.search-bar{
     margin: 0;
 }
 
-@keyframes show {
-    100% {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-.error-box, .success-box {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 1rem;
-    height: 3rem;
-    margin-top: 1rem;
-    animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
-    opacity: 0;
-    transform: rotateX(-90deg);
-    transform-origin: top center;
-}
-
-.error-box {
-    background-color: #f74641;
-    border: #9e0b0b 5px solid;
-}
-
-.success-box {
-    background-color: #8ae590;
-    border: #387c59 5px solid;
-}
-
-#loginErrorMessage {
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-#signupErrorMessage {
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
 .section-content {
-    padding: 0rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .section-title {
     text-align: center;
 }
 
-
-.setting-single {
+.overview-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-.setting-text {
-    display: flex;
-    align-items: center;
+.game-status {
+    display: none;
+    position: absolute;
+    width: 10%;
+    margin: 0px;
+    background-color: rgba(17, 98, 218, 0.794);
+    border-bottom-right-radius: 1rem;
+    text-align: center;
 }
 
-.setting-text > p {
-    min-width: 10rem;
-}
-
-.input-field > input {
-    width:100%;
-    font-size: 2rem;
-    color: #ffffff;
-    background-color: #101721;
-    border-color: #020304;
-    border-right:0px;
-    border-bottom: 0px;
-    
-}
-
-.setting-bio > textarea {
-    resize: vertical;
+.game-img {
+    height: auto;
     width: 100%;
-    font-size: 2rem;
-    height: 10rem;
-    color: #ffffff;
-    background-color: #101721;
-    border-color: #020304;
-    border-right:0px;
-    border-bottom: 0px;
+    aspect-ratio: 160/127;
 }
 
-.setting-bio > button {
-    margin-left: auto;
+.game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 1rem;
+}
+
+.game-name {
+    margin: 0;
+}
+
+.buy-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@keyframes buy-lighten {
+    from {
+        filter: brightness(100%);
+        box-shadow: none;
+    }
+    to {
+        filter: brightness(130%);
+        box-shadow: 0 0 10px white;
+    }
+}
+
+.buy-btn {
+    color: black;
+    font-size: 1.5rem;
+    height: 4rem;
+    width: 10rem;
+    background: linear-gradient(to right, #4fc82f 0%, #19b14e 50%);
+    border: none;
+    border-radius: 2px;
+    filter: brightness(120%);
+    box-shadow: 0 0 1px white;
+}
+
+.buy-btn:hover:enabled {
+    filter: brightness(130%);
+    box-shadow: 0 0 10px white;
+    animation: 150ms buy-lighten ease-out;
+}
+
+.buy-btn:active:enabled {
+    filter: brightness(75%);
+    box-shadow: 0 0 1px white;
+}
+
+.buy-btn:disabled {
+    filter: brightness(50%);
 }
 
 .submit-btn {
@@ -202,13 +195,13 @@ input.search-bar{
     }
 }
 
-.submit-btn:hover {
+.submit-btn:hover, .remove-btn:hover {
     filter: brightness(120%);
     box-shadow: 5px 5px 5px black;
     animation: 150ms lighten ease-out;
 }
 
-.submit-btn:active {
+.submit-btn:active, .remove-btn:active {
     filter: brightness(75%);
     box-shadow: 1px 1px 5px black;
 }
