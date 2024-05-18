@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const pfp_input = document.getElementById("pfpInput");
     const error_message = document.getElementById("errorMessage")
 
+    const cart_btn = document.getElementById("cartBtn")
+    function updateCartCount() {
+        fetch("/cart").then((response) => response.json()).then((result) => cart_btn.innerText = "Cart: " + (result.length ? result.length : 0));
+    }
+    updateCartCount();
 
     //fetch('/user/info').then((response) => response.json()).then((res) => console.log(res))
     function loadDbData() {

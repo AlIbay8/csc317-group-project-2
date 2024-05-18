@@ -21,13 +21,19 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const game_template = document.getElementById("gameTemplate")
     const game_grid = document.querySelector(".game-grid")
     
+    const cart_btn = document.getElementById("cartBtn")
+    function updateCartCount() {
+        fetch("/cart").then((response) => response.json()).then((result) => cart_btn.innerText = "Cart: " + (result.length ? result.length : 0));
+    }
+    updateCartCount();
+
     fetch("/game/all").then((response) => response.json()).then( async (result) => {
         let cart_response = await fetch("/cart")
         let cart = []
         if (cart_response.ok) {
             cart = await cart_response.json()
         }
-        console.log("cart: ", cart)
+
         for (let game of result) {
             let game_in_cart = cart.some(g => g.product_id==game.id)
             const clone = game_template.content.cloneNode(true);
@@ -48,15 +54,19 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                 c_buy.addEventListener("click", () => {
                     fetch(`/cart/add/${game.id}`, {
                         method: 'POST'
-                    }).then(response => response.json()).then(result => {
-                        c_buy.disabled = true
-                        c_status.style.display = "inline-block";
+                    }).then(response => {
+                        if (response.ok) {
+                            c_buy.disabled = true
+                            c_status.style.display = "inline-block";
+                            updateCartCount();
+                        } else {
+                            alert("Please log in to add games to cart.");
+                        }
                     }).catch(err => alert(err));
                 })
             }
             
             game_grid.appendChild(clone)
-            console.log(result)
         }
     });
 });
