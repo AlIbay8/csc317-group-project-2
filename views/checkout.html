@@ -1,292 +1,97 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>PlaceHolder Title</title>
-        <link rel="stylesheet" href="/css/header.css">
-        <link rel="stylesheet" href="/css/checkout.css">
+        <title>Profile</title>
+        <link href="/css/checkout.css" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="/js/checkout.js"></script>
     </head>
-
-
-    <body style="background-color: #1b2838;">
-
-
-        <!-- Header for checkout page -->
-       <div class="header">
-
-            <div class="left-section">
-                <img class="logo" alt="Placeholder Logo">
-                 <p class="logo-name">Logo Name</p>
+    <body>
+        <nav class="sticky-navbar">
+            <div class="title">
+                <a href="/"><h1>E-commerce</h1></a>
             </div>
-
-
-            <div class="middle-section">
-                <input class="search-bar" type="text" placeholder="Search...">
-                <button class="search-button" type="button">
-                    <img class="search-icon" src="/resources/icons/search-button-svgrepo-com.svg">
+            <div class="search">
+                <input class="search-bar" id="searchBar" type="text" placeholder="Search...">
+                <button class="search-button nav-btn" id="searchBtn" type="button">
+                    Search
                 </button>
             </div>
             
-            <div class="right-section">
-                <button class="home-button">
-                    <img class="home-icon" src="/resources/icons/Home Icon.svg">
-                </button>
-                <button class="profile-button">
-                    <img class="profile-icon" src="/resources/icons/no-profile-picture-15257.svg">
-                </button>
+            <div class="account-options">
+                <button class="nav-btn" id="cartBtn">Cart: 0</button>
+                <a href="/profile"><button class="nav-btn">Account</button></a>
             </div>
-       </div>
-       <!-- End of Header for checkout page -->
-
-       <!-- Start of Checkout Container -->
-
-       <div class="checkoutparent-container">
-
-            <!--Start of Order/Bill/Payment Containers -->
-           <div class="checkoutcol-container">
-
-                <!-- Start of Order Parent -->
-               <div class="orderparent-container">
-
-                        <!-- Header for Order Summary -->
-                       <div class="header-container">
-                            <h1 class="headercustom-text">Order Summary</h1>
-                       </div>
-                       
-                       <!-- Start of Order Sum -->
-                       <div class="ordersum-container">
-
-                            <ul class="no-bullet">
-                                <li>
-                                    <div class="vgitem-container">
-                                            <p class="custom-text">Video Game Name</p>
-                                            <!-- Video Game Info Container -->
-
-                                            <div class="vginfo-container">
-                                                <p class="custom-text">Price $$</p>
-                                                <div class="qtyinput-container">
-                                                    <span class="minus">-</span>
-                                                    <span class="num">00</span>
-                                                    <span class="plus">+</span>
-                                                </div>
-                                            </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="vgitem-container">
-                                            <p class="custom-text">Video Game Name</p>
-                                            <!-- Video Game Info Container -->
-
-                                            <div class="vginfo-container">
-                                                <p class="custom-text">Price $$</p>
-                                                <div class="qtyinput-container">
-                                                    <span class="minus">-</span>
-                                                    <span class="num">00</span>
-                                                    <span class="plus">+</span>
-                                                </div>
-                                            </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="vgitem-container">
-                                            <p class="custom-text">Video Game Name</p>
-                                            <!-- Video Game Info Container -->
-
-                                            <div class="vginfo-container">
-                                                <p class="custom-text">Price $$</p>
-                                                <div class="qtyinput-container">
-                                                    <span class="minus">-</span>
-                                                    <span class="num">00</span>
-                                                    <span class="plus">+</span>
-                                                </div>
-                                            </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="vgitem-container">
-                                            <p class="custom-text">Video Game Name</p>
-                                            <!-- Video Game Info Container -->
-
-                                            <div class="vginfo-container">
-                                                <p class="custom-text">Price $$</p>
-                                                <div class="qtyinput-container">
-                                                    <span class="minus">-</span>
-                                                    <span class="num">00</span>
-                                                    <span class="plus">+</span>
-                                                </div>
-                                            </div>
-                                    </div>
-                                </li>
-                            </ul>
-
-                       </div> 
-                       <!-- End of Order Summary -->
-                       <div class="footer-container">
-                            <p class="custom-text"># of Items</p>
-                            <div class="footerright-section">
-                                <p class="custom-text">Total: TotalPrice$</p>
-                            </div>
-                       </div>
-               </div>
-               <!-- End of Order Parent -->
-
-               <!-- start of Bill Parent -->
-               <div class="billparent-container">
-                        <!-- Header for Bill Info -->
-                       <div class="header-container">
-                            <h1 class="headercustom-text">Billing Information</h1>
-                       </div>
-
-                       <div class="billinfo-container">
-                                <!-- First Form Column -->
-                                <form class="form-style">
-                                    <label class="form-labels">First name:</label><br>
-                                    <input  class="inputform-bar" type="text" id="fname" name="fname" value="John" ><br>
-
-                                    <label class="form-labels">Email Address:</label><br>
-                                    <input  class="inputform-bar" type="text" id="lname" name="lname" value="Doe">
-
-                                    <label class="form-labels">Address:</label><br>
-                                    <input  class="inputform-bar" type="text" id="lname" name="lname" value="Doe">
-
-                                    <label class="form-labels">Country:</label><br>
-                                    <input  class="inputform-bar" type="text" id="lname" name="lname" value="Doe">
-
-
-                                </form>
-                                <!-- Second Form Column -->
-                                <form class="form-style">
-                                    <label class="form-labels">Last name:</label><br>
-                                    <input  class="inputform-bar" type="text" id="fname" name="fname" value="John" ><br>
-
-                                    <label class="form-labels">Phone Number:</label><br>
-                                    <input  class="inputform-bar" type="text" id="lname" name="lname" value="Doe">
-
-                                    <label class="form-labels">State:</label><br>
-                                    <input  class="inputform-bar" type="text" id="lname" name="lname" value="Doe">
-
-                                    <label class="form-labels">Zip Code:</label><br>
-                                    <input  class="inputform-bar" type="text" id="lname" name="lname" value="Doe">
-                                </form>
-
-
-                                <div class="dropdown">
-                                    <form>
-                                        <span style="color: #c7d5e0;">Standard Delivery:</span>
-                                        <select name="shipping">
-                                            <option>Select Shipping</option>
-                                        </select>
-                                    </form>
-                                </div>
-                       </div>
+        </nav>
+        <div class="body-container">
+            <section class="section-box" id="cart">
+                <div class="section-header">
+                    <h2 class="section-title">Cart</h2>
+                </div>
+                <div class="error-box" id="loginErrorMessage"><p>Error: email is invalid.</p></div>
                 
-               </div>          
-                <!-- End of Bill Info  -->
-
-
-                <!-- Start of Payment Info -->
-               <div class="paymentparent-container">
-                    
-                    <div class="header-container">
-                        <h1 class="custom-text">Payment Information</h1>
-                    </div>
-
-                    <div class="paymentinfo-container">
-
-                        <div class="paymentoptions-col">
-                    
-    
-                            <div class="paymentoptions-row">
-                                <img  class="pay-icon" src="/resources/icons/4375034_logo_paypal_icon.svg">
-                                <p class="payicon-text">Pay with Paypal</p>
-                                <input class="paycheck-box" type="checkbox">
+                <div id="cartList">
+                    <template id="gameTemplate">
+                        <div class="game-card">
+                            <img class="game-img" src="/resources/T8H-thumbnail-small.gif">
+                            <div class="game-info">
+                                <h3 class="game-name">The 8th Hour</h3>
+                                <p class="game-price">$7.99</p>
                             </div>
-            
-                            <div class="paymentoptions-row">
-                                <img  class="pay-icon" src="/resources/icons/google-pay-primary-logo-logo-svgrepo-com.svg">
-                                <p class="payicon-text">Pay with GooglePay</p>
-                                <input class="paycheck-box" type="checkbox">
-                            </div>
-            
-                            <div class="paymentoptions-row">
-                                <img  class="pay-icon" src="/resources/icons/4518982_apple_pay_icon.svg">
-                                <p class="payicon-text">Pay with Apple Pay</p>
-                                <input class="paycheck-box" type="checkbox">
-                            </div>
-            
-                            <div class="paymentoptions-row">
-                                <img  class="pay-icon" src="/resources/icons/venmo-svgrepo-com.svg">
-                                <p class="payicon-text">Pay with Venmo</p>
-                                <input class="paycheck-box" type="checkbox">
+                            <div class="remove-container">
+                                <button class="remove-btn">Remove from cart</button>
                             </div>
                         </div>
-
-                        <div class="cardinfo-col">
-
-                            <h1 class="custom-text">Card Information</h1>
-                            <div class="card-icons">
-                                <img class="cardicons"src= "/resources/icons/image2vector.svg">
-                                <img class="cardicons"src= "/resources/icons/visa-svgrepo-com.svg">
-                                <img class="cardicons" src="/resources/icons/chase-logo-svgrepo-com.svg">
-                                
-                            </div>
-                            <input class="inputcard-bar"type="text" placeholder="Card Number">
-                            <div class="cardinfo2-row">
-                                <input class="inputcard-bar" type="text" placeholder="MM/YY">
-                                <input  class="inputcard-bar"type="text" placeholder="CVV">
-                            </div>
-                            <div class="proceed-container">
-                                <button class="checkout-button">Proceed</button>
-                            </div>
-                            
+                    </template>
+                </div>
+            </section>
+            <section class="section-box checkout">
+                <div class="section-header">
+                    <h2 class="section-title">Checkout</h2>
+                </div>
+                <div class="error-box" id="signupErrorMessage"><p>Error: email is invalid.</p></div>
+                <div class="success-box" id="signupSuccessMessage"><p>Registration successful! Please log in.</p></div>
+                <form class="section-content" id="signupForm">
+                    <div class="input-field">
+                        <p>Card Number:</p>
+                        <input type="number" id="cardNumber" required autocomplete="off">
+                    </div>
+                    <div class="input-field">
+                        <p>Cardholder Name:</p>
+                        <input type="text" id="cardholderName" required autocomplete="off">
+                    </div>
+                    <div class="input-row">
+                        <div class="input-field">
+                            <p>Expiry Month</p>
+                            <input type="month" id="expiryMonth" required autocomplete="off">
+                        </div>
+                        <div>
+                            <br>
+                            <p>/</p>
+                        </div>
+                        <div class="input-field">
+                            <p>Expiry Year</p>
+                            <input type="number" id="expiryYear" required autocomplete="off">
+                        </div>
+                        <div class="input-field">
+                            <p>CVC/CVV</p>
+                            <input type="number" id="cvv" required autocomplete="off">
                         </div>
                     </div>
+                    <hr>
+                    <div id="totalRow">
+                        <h3>Total:</h3>
+                        <p id="totalPrice">$7.99</p>
+                    </div>
+                    
+                    <button type="button" class="submit-btn" id="payBtn">Confirm Payment</button>
+                </form>
+            </section>
+        </div>
+        <footer>
 
-
-               </div> 
-               <!-- End of Payment Info -->
-           </div>
-           <!-- End of Order/Bill/Payment Containers -->
-
-           <!-- Start of Total/FAQ Container -->
-
-           <div class="checkoutcol2-container">
-                <!-- Total Container -->
-                <div class="total-header">
-                    <h1 class="custom-text">Total</h1>
-                </div>
-
-                <div class="total-container">
-                    <h3 class="custom-text">Sub Total Price $:</h3>
-                    <h3 class="custom-text">Tax$:  </h3>
-                    <h3 class="custom-text">Est. Delivery Fee $:  </h3>
-                </div>
-
-                <div class="total-footer">
-                    <a href="https://www.youtube.com/shorts/SXHMnicI6Pg"><span class="color-text">Discount?</span></a>
-                    <p class="custom-text">Overall Price$</p>
-                </div>
-                <!-- End of Total Container -->
-
-
-                <!-- FAQ Container -->
-                <div class="header-container">
-                    <h1 class="custom-text">Frequently Asked Questions:</h1>
-                </div>
-                <div class="question-container">
-                    <p class="question-text">Question#1: Blah Blah Blah</p>
-                    <p class="answer-text"> &bull; Answer</p>
-                    <p class="question-text">Question#2: Blah Blah Blah</p>
-                    <p class="answer-text"> &bull; Answer</p>
-                    <p class="question-text">Question#3: Blah Blah Blah</p>
-                    <p class="answer-text"> &bull; Answer</p>
-                    <p class="question-text">Question#4: Blah Blah Blah</p>
-                    <p class="answer-text"> &bull; Answer</p>
-                    <p class="question-text">Question#5: Blah Blah Blah</p>
-                    <p class="answer-text"> &bull; Answer</p>
-                </div>
-           </div>
-
-       </div>
-       <script src="checkout.js"></script>
+        </footer>
     </body>
 </html>

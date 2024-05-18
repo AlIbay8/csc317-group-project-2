@@ -1,6 +1,9 @@
 const express = require('express');
+const ejs = require("ejs");
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const path = require("path");
+const db = require('./db/db');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const gameRoutes = require('./routes/game');
@@ -16,7 +19,13 @@ app.use(session({
     saveUninitialized: true
 }));
 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.engine('ejs', require('ejs').__express);
+ejs.delimiter = '/';
+ejs.openDelimiter = '[';
+ejs.closeDelimiter = ']';
+
 app.use(express.static('public'));
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
@@ -25,11 +34,16 @@ app.use('/cart', cartRoutes);
 
 
 app.get('/', (req, res) => {
+    //res.render('home')
     res.sendFile(__dirname + '/views/home.html');
 });
 
 app.get('/checkout', (req, res) => {
-    res.sendFile(__dirname + '/views/checkout.html');
+    if (req.session.userId) {
+        res.sendFile(__dirname + '/views/checkout.html');
+    } else {
+        res.redirect('/auth/login');
+    }
 })
 
 app.get('/profile', (req, res) => {
@@ -39,6 +53,15 @@ app.get('/profile', (req, res) => {
         res.redirect('/auth/login');
     }
 });
+
+app.get('/product/:id', (req, res) => {
+    db.get('SELECT * FROM products where id = ?', [req.params.id], (err, product) => {
+        if (err || !product) {
+            return res.status(400).json({ message: `Can't get game with id ${req.params.id}` });
+        }
+        res.render(`product`, {game: product})
+    })
+})
 
 const PORT = 3000;
 app.listen(PORT, () => {

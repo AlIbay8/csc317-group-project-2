@@ -14,14 +14,14 @@
                 <h1>E-commerce</h1>
             </div>
             <div class="search">
-                <input class="search-bar" type="text" placeholder="Search...">
-                <button class="search-button nav-btn" type="button">
+                <input class="search-bar" id="searchBar" type="text" placeholder="Search...">
+                <button class="search-button nav-btn" id="searchBtn" type="button">
                     Search
                 </button>
             </div>
             
             <div class="account-options">
-                <a href="/checkout"><button class="nav-btn">Cart: 0</button></a>
+                <a href="/checkout"><button class="nav-btn" id="cartBtn">Cart: 0</button></a>
                 <a href="/profile"><button class="nav-btn">Account</button></a>
             </div>
         </nav>
@@ -34,87 +34,20 @@
                 <div class="section-content">
                     <div class="game-grid">
                         <!-- Game card template -->
-                        <div class="game-card">
-                            <img class="game-img" src="/resources/T8H-thumbnail-small.gif">
-                            <div class="game-info">
-                                <h3 class="game-name">The 8th Hour</h3>
-                                <div class="buy-row">
-                                    <p class="game-price">$7.99</p>
-                                    <button class="buy-btn">Add to Cart</button>
+                        <template id="gameTemplate">
+                            <div class="game-card">
+                                <p class="game-status">In Cart</p>
+                                <a class="game-link"><img class="game-img" src="/resources/T8H-thumbnail-small.gif"></a>
+                                <div class="game-info">
+                                    <a class="game-link"><h3 class="game-name">The 8th Hour</h3></a>
+                                    <div class="buy-row">
+                                        <p class="game-price">$7.99</p>
+                                        <button class="buy-btn">Add to Cart</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </template>
                         <!-- End game card template -->
-                        <div class="game-card">
-                            <img class="game-img" src="/resources/WTC_Thumbnail.gif">
-                            <div class="game-info">
-                                <h3 class="game-name">What the Curl?</h3>
-                                <div class="buy-row">
-                                    <p class="game-price">$4.99</p>
-                                    <button class="buy-btn">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-img" src="/resources/TNOG_Thumbnail.gif">
-                            <div class="game-info">
-                                <h3 class="game-name">The Nature of Gravity</h3>
-                                <div class="buy-row">
-                                    <p class="game-price">$5.99</p>
-                                    <button class="buy-btn">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-img" src="/resources/TelepathicPuzzler_Thumbnail.gif">
-                            <div class="game-info">
-                                <h3 class="game-name">Telepathic Puzzler</h3>
-                                <div class="buy-row">
-                                    <p class="game-price">$1.99</p>
-                                    <button class="buy-btn">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-img" src="/resources/T8H-thumbnail-small.gif">
-                            <div class="game-info">
-                                <h3 class="game-name">The 8th Hour</h3>
-                                <div class="buy-row">
-                                    <p class="game-price">$7.99</p>
-                                    <button class="buy-btn">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-img" src="/resources/WTC_Thumbnail.gif">
-                            <div class="game-info">
-                                <h3 class="game-name">What the Curl?</h3>
-                                <div class="buy-row">
-                                    <p class="game-price">$4.99</p>
-                                    <button class="buy-btn">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-img" src="/resources/TNOG_Thumbnail.gif">
-                            <div class="game-info">
-                                <h3 class="game-name">The Nature of Gravity</h3>
-                                <div class="buy-row">
-                                    <p class="game-price">$5.99</p>
-                                    <button class="buy-btn">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-img" src="/resources/TelepathicPuzzler_Thumbnail.gif">
-                            <div class="game-info">
-                                <h3 class="game-name">Telepathic Puzzler</h3>
-                                <div class="buy-row">
-                                    <p class="game-price">$1.99</p>
-                                    <button class="buy-btn">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

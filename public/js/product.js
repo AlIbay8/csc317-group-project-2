@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     //         </div>
     //     </div>
     // </div>
-    const game_template = document.getElementById("gameTemplate")
-    const game_grid = document.querySelector(".game-grid")
     
     const cart_btn = document.getElementById("cartBtn")
     function updateCartCount() {
@@ -51,52 +49,35 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         });
     })
 
-    fetch("/game/all").then((response) => response.json()).then( async (result) => {
+    fetch(`/game/${game_id}`).then((response) => response.json()).then( async (result) => {
         let cart_response = await fetch("/cart")
         let cart = []
         if (cart_response.ok) {
             cart = await cart_response.json()
         }
 
-        for (let game of result) {
-            let game_in_cart = cart.some(g => g.product_id==game.id)
-            const clone = game_template.content.cloneNode(true);
-            let c_card = clone.querySelector(".game-card")
-            let c_status = clone.querySelector(".game-status")
-            let c_links = c_card.getElementsByClassName("game-link")
-            let c_img = clone.querySelector(".game-img")
-            let c_name = clone.querySelector(".game-name")
-            let c_price = clone.querySelector(".game-price")
-            let c_buy = clone.querySelector(".buy-btn")
-
-            c_img.src = game.img
-            c_name.textContent = game.name
-            c_price.textContent = "$"+game.price
-     
-            for (let link of c_links) {
-                link.href = `/product/${game.id}`
-            }
-
-            if (game_in_cart) {
-                c_buy.disabled = true
-                c_status.style.display = "inline-block";
-            } else {
-                c_buy.addEventListener("click", () => {
-                    fetch(`/cart/add/${game.id}`, {
-                        method: 'POST'
-                    }).then(response => {
-                        if (response.ok) {
-                            c_buy.disabled = true
-                            c_status.style.display = "inline-block";
-                            updateCartCount();
-                        } else {
-                            alert("Please log in to add games to cart.");
-                        }
-                    }).catch(err => alert(err));
-                })
-            }
-            
-            game_grid.appendChild(clone)
+        let game_in_cart = cart.some(g => g.product_id==game_id)
+        let c_status = document.querySelector(".game-status")
+        let c_buy = document.querySelector(".buy-btn")
+        
+        if (game_in_cart) {
+            c_buy.disabled = true
+            c_status.style.display = "inline-block";
+        } else {
+            c_buy.addEventListener("click", () => {
+                fetch(`/cart/add/${game_id}`, {
+                    method: 'POST'
+                }).then(response => {
+                    if (response.ok) {
+                        c_buy.disabled = true
+                        c_status.style.display = "inline-block";
+                        updateCartCount();
+                    } else {
+                        alert("Please log in to add games to cart.");
+                    }
+                }).catch(err => alert(err));
+            })
         }
     });
+
 });

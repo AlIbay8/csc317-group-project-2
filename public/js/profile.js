@@ -11,6 +11,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const pfp_input = document.getElementById("pfpInput");
     const error_message = document.getElementById("errorMessage")
 
+    const cart_btn = document.getElementById("cartBtn")
+    function updateCartCount() {
+        fetch("/cart").then((response) => response.json()).then((result) => cart_btn.innerText = "Cart: " + (result.length ? result.length : 0));
+    }
+    updateCartCount();
+
+    const search_btn = document.getElementById("searchBtn")
+    search_btn.addEventListener("click", () => {
+        const search_bar = document.getElementById("searchBar")
+        let query = search_bar.value.toLowerCase().split(" ")
+        console.log(query)
+        fetch("/game/all").then((response) => response.json()).then((games) => {
+            let result = games.reduce((fit, curr) => {
+                let score = 0;
+                for (let word of query) {
+                    if (curr.name.toLowerCase().includes(word)) {
+                        score++;
+                    }
+                }
+                return score==query.length ? curr : fit;
+            }, null)
+            console.log(result)
+            if (result===null) {
+                alert("Couldn't find game")
+            } else {
+                window.location.href = `/product/${result.id}`;
+            }
+        });
+    })
 
     //fetch('/user/info').then((response) => response.json()).then((res) => console.log(res))
     function loadDbData() {

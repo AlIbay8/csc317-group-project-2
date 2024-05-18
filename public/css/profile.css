@@ -106,10 +106,6 @@ input.search-bar{
     margin-bottom: 1rem;
 }
 
-#logoutBtn {
-
-}
-
 .account-settings {
     min-width: 50%;
 }
@@ -234,4 +230,9 @@ input.search-bar{
 #submitBtn:active, #logoutBtn:active {
     filter: brightness(75%);
     box-shadow: 1px 1px 5px black;
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
 }
