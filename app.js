@@ -1,4 +1,5 @@
 const express = require('express');
+const ejs = require("ejs");
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const path = require("path");
@@ -21,6 +22,10 @@ app.use(session({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('ejs', require('ejs').__express);
+ejs.delimiter = '/';
+ejs.openDelimiter = '[';
+ejs.closeDelimiter = ']';
+
 app.use(express.static('public'));
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);

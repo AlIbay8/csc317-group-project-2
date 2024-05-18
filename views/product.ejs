@@ -14,8 +14,8 @@
                 <a href="/"><h1>E-commerce</h1></a>
             </div>
             <div class="search">
-                <input class="search-bar" type="text" placeholder="Search...">
-                <button class="search-button nav-btn" type="button">
+                <input class="search-bar" id="searchBar" type="text" placeholder="Search...">
+                <button class="search-button nav-btn" id="searchBtn" type="button">
                     Search
                 </button>
             </div>
@@ -41,31 +41,34 @@
                     </div>
                 </section>
             <% } %> -->
-            <% if (game) { %>
-            <section class="section-box">
-                <div class="section-header">
-                    <h2 class="section-title">Game</h2>
-                </div>
-                <div class="section-content">
-                    <div class="overview-row">
-                        <p class="game-status">In Cart</p>
-                        <img class="game-img" src=<%= game.img %>>
-                        <div class="game-info">
-                            <h3><%= game.name %></h3>
-                            <p class="genres">Genres: <%= game.genres %></p>
-                            <div class="buy-info">
-                                <p class="game-price">$<%= game.price %></p>
-                                <button class="buy-btn">Add to Cart</button>
+            [/ if (game) { /]
+                <section class="section-box">
+                    <div class="section-header">
+                        <h2 class="section-title">Game</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="overview-row">
+                            <p class="game-status">In Cart</p>
+                            <img class="game-img" src=[/= game.img /]>
+                            <div class="game-info">
+                                <h3>[/= game.name /]</h3>
+                                <p class="genres">Genres: [/= game.genre /]</p>
+                                <div class="buy-info">
+                                    <p class="game-price">$[/= game.price /]</p>
+                                    <button class="buy-btn">Add to Cart</button>
+                                </div>
                             </div>
                         </div>
+                        <div class="description-container">
+                            <h4>Description</h4>
+                            <p class="description">[/= game.desc /]</p>
+                        </div>
                     </div>
-                    <div class="description-container">
-                        <h4>Description</h4>
-                        <p class="description"><%= game.desc %></p>
-                    </div>
-                </div>
-            </section>
-            <% } %>
+                </section>
+                <script>
+                    var game_id = [/= game.id /];
+                </script>
+            [/ } /]
         </div>
         <footer>
 
