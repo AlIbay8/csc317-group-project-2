@@ -63,7 +63,10 @@ app.get('/product/:id', (req, res) => {
     })
 })
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+const port = process.env.PORT || 3001;
+const server = app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
+
+server.keepAliveTimeout = 120 * 1000;
+server.headersTimeout = 120 * 1000;
