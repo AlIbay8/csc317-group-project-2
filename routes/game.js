@@ -4,6 +4,10 @@ const router = express.Router();
 
 router.use(express.json()); // Middleware to parse JSON bodies
 
+
+// to get an array of all games in db, use
+
+// fetch("/game/all").then((response) => response.json()).then((result) => console.log(result));
 router.get('/all', async (req, res) => {
     db.all(`SELECT * FROM products`, (err, products) => {
         if (err || !products) {
@@ -14,6 +18,11 @@ router.get('/all', async (req, res) => {
     
 })
 
+// to get info of specific game, use
+
+// fetch("/game/{id}").then((response) => response.json()).then((result) => console.log(result));
+
+// replace {id} with the id of the desired game
 router.get('/:id', async (req, res) => {
     db.get('SELECT * FROM products where id = ?', [req.params.id], (err, product) => {
         if (err || !product) {
@@ -22,26 +31,5 @@ router.get('/:id', async (req, res) => {
         return res.json(product)
     })
 })
-
-// router.get('/test', (req, res) => {
-//     return res.json({
-//         id: req.session.userId
-//     })
-// })
-
-// router.post('/update', (req, res) => {
-//     const user_info = req.body
-//     const update_keys = ["name", "email", "bio", "pfp"]
-//     for (let key of update_keys) {
-//         if (user_info[key]) {
-//             db.run(`UPDATE users SET ${key} = ? WHERE id = ?`, [user_info[key], req.session.userId], (err) => {
-//                 if (err) {
-//                     console.log(`existing item error on ${key}`)
-//                     return res.status(400).json({message: err})
-//                 }
-//             })
-//         }   
-//     }
-// })
 
 module.exports = router;

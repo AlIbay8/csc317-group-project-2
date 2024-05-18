@@ -4,6 +4,12 @@ const router = express.Router();
 
 router.use(express.json()); // Middleware to parse JSON bodies
 
+
+// to get an array of all the items in a user's cart, use
+
+// fetch("/cart").then((response) => response.json()).then((result) => console.log(result));
+
+// this only works if the user is logged in
 router.get('/', (req, res) => {
     if (req.session.userId===undefined) {
         return res.status(400).json({message: "No user currently logged in."})
@@ -17,6 +23,14 @@ router.get('/', (req, res) => {
     })
 })
 
+
+// to add a game to the user's cart, use
+
+// fetch('/cart/add/{game_id}', {
+//     method: 'POST'
+// }).then((response) => console.log(response));
+
+// replace {game_id} with the desired game
 router.post('/add/:game_id', (req, res) => {
     if (req.session.userId===undefined) {
         return res.status(400).json({message: "No user currently logged in."})
@@ -43,6 +57,13 @@ router.post('/add/:game_id', (req, res) => {
     })
 })
 
+// to remove a game to the user's cart, use
+
+// fetch('/cart/remove/{game_id}', {
+//     method: 'POST'
+// }).then((response) => console.log(response));
+
+// replace {game_id} with the desired game
 router.post('/remove/:game_id', (req, res) => {
     if (req.session.userId===undefined) {
         return res.status(400).json({message: "No user currently logged in."})
@@ -60,6 +81,11 @@ router.post('/remove/:game_id', (req, res) => {
     })
 })
 
+// to clear the entire user's cart, use
+
+// fetch('/cart/clear', {
+//     method: 'POST'
+// }).then((response) => console.log(response));
 router.post('/clear/', (req, res) => {
     if (req.session.userId===undefined) {
         return res.status(400).json({message: "No user currently logged in."})
