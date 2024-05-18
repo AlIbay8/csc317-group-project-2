@@ -118,6 +118,17 @@ input.search-bar{
     background: #141414;
     box-shadow: 0 0 6px #ffffff;
     border-radius: 1rem;
+    position: relative;
+}
+
+.game-status {
+    display: none;
+    position: absolute;
+    width: 50%;
+    margin: 0px;
+    background-color: rgba(17, 98, 218, 0.794);
+    border-radius: 1rem 0;
+    text-align: center;
 }
 
 .game-card:hover {
@@ -153,6 +164,17 @@ input.search-bar{
     gap: 0.5rem;
 }
 
+@keyframes buy-lighten {
+    from {
+        filter: brightness(100%);
+        box-shadow: none;
+    }
+    to {
+        filter: brightness(130%);
+        box-shadow: 0 0 10px white;
+    }
+}
+
 .buy-btn {
     height: 4rem;
     width: 4rem;
@@ -160,8 +182,22 @@ input.search-bar{
     border: none;
     border-radius: 2px;
     filter: brightness(120%);
-    box-shadow: 5px 5px 5px black;
-    animation: 150ms lighten ease-out;
+    box-shadow: 0 0 1px white;
+}
+
+.buy-btn:hover:enabled {
+    filter: brightness(130%);
+    box-shadow: 0 0 10px white;
+    animation: 150ms buy-lighten ease-out;
+}
+
+.buy-btn:active:enabled {
+    filter: brightness(75%);
+    box-shadow: 0 0 1px white;
+}
+
+.buy-btn:disabled {
+    filter: brightness(50%);
 }
 
 @keyframes show {
@@ -275,13 +311,13 @@ input.search-bar{
     }
 }
 
-.submit-btn:hover, .buy-btn:hover {
+.submit-btn:hover {
     filter: brightness(130%);
     box-shadow: 5px 5px 5px black;
     animation: 150ms lighten ease-out;
 }
 
-.submit-btn:active, .buy-btn:active {
+.submit-btn:active {
     filter: brightness(75%);
     box-shadow: 1px 1px 5px black;
 }

@@ -8,4 +8,55 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     // }).then((response) => console.log(response));
 
     // fetch("/cart").then((response) => response.json()).then((result) => console.log(result));
+    // <div class="game-card">
+    //     <img class="game-img" src="/resources/T8H-thumbnail-small.gif">
+    //     <div class="game-info">
+    //         <h3 class="game-name">The 8th Hour</h3>
+    //         <div class="buy-row">
+    //             <p class="game-price">$7.99</p>
+    //             <button class="buy-btn">Add to Cart</button>
+    //         </div>
+    //     </div>
+    // </div>
+    const game_template = document.getElementById("gameTemplate")
+    const game_grid = document.querySelector(".game-grid")
+    
+    fetch("/game/all").then((response) => response.json()).then( async (result) => {
+        let cart_response = await fetch("/cart")
+        let cart = []
+        if (cart_response.ok) {
+            cart = await cart_response.json()
+        }
+        console.log("cart: ", cart)
+        for (let game of result) {
+            let game_in_cart = cart.some(g => g.product_id==game.id)
+            const clone = game_template.content.cloneNode(true);
+            let c_status = clone.querySelector(".game-status")
+            let c_img = clone.querySelector(".game-img")
+            let c_name = clone.querySelector(".game-name")
+            let c_price = clone.querySelector(".game-price")
+            let c_buy = clone.querySelector(".buy-btn")
+
+            c_img.src = game.img
+            c_name.textContent = game.name
+            c_price.textContent = "$"+game.price
+            
+            if (game_in_cart) {
+                c_buy.disabled = true
+                c_status.style.display = "inline-block";
+            } else {
+                c_buy.addEventListener("click", () => {
+                    fetch(`/cart/add/${game.id}`, {
+                        method: 'POST'
+                    }).then(response => response.json()).then(result => {
+                        c_buy.disabled = true
+                        c_status.style.display = "inline-block";
+                    }).catch(err => alert(err));
+                })
+            }
+            
+            game_grid.appendChild(clone)
+            console.log(result)
+        }
+    });
 });

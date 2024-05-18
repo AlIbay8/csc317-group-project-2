@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const path = require("path");
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const gameRoutes = require('./routes/game');
@@ -16,7 +17,9 @@ app.use(session({
     saveUninitialized: true
 }));
 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.engine('ejs', require('ejs').__express);
 app.use(express.static('public'));
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
@@ -25,6 +28,7 @@ app.use('/cart', cartRoutes);
 
 
 app.get('/', (req, res) => {
+    //res.render('home')
     res.sendFile(__dirname + '/views/home.html');
 });
 
