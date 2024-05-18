@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const gameRoutes = require('./routes/game');
+const cartRoutes = require('./routes/cart');
 
 const app = express();
 
@@ -18,6 +20,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
+app.use('/game', gameRoutes);
+app.use('/cart', cartRoutes);
 
 
 app.get('/', (req, res) => {
