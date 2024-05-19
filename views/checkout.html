@@ -3,6 +3,7 @@
     <head>
         <title>Profile</title>
         <link href="/css/checkout.css" rel="stylesheet" type="text/css" />
+        <link href="/css/nav.css" rel="stylesheet" type="text/css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
     <body>
         <nav class="sticky-navbar">
             <div class="title">
-                <a href="/"><h1>E-commerce</h1></a>
+                <a href="/"><h1>STEAK</h1></a>
             </div>
             <div class="search">
                 <input class="search-bar" id="searchBar" type="text" placeholder="Search...">
@@ -21,7 +22,7 @@
             </div>
             
             <div class="account-options">
-                <button class="nav-btn" id="cartBtn">Cart: 0</button>
+                <a href="/checkout"><button class="nav-btn" id="cartBtn">Cart: 0</button></a>
                 <a href="/profile"><button class="nav-btn">Account</button></a>
             </div>
         </nav>
@@ -64,16 +65,8 @@
                     </div>
                     <div class="input-row">
                         <div class="input-field">
-                            <p>Expiry Month</p>
+                            <p>Expiry Month/Year</p>
                             <input type="month" id="expiryMonth" required autocomplete="off">
-                        </div>
-                        <div>
-                            <br>
-                            <p>/</p>
-                        </div>
-                        <div class="input-field">
-                            <p>Expiry Year</p>
-                            <input type="number" id="expiryYear" required autocomplete="off">
                         </div>
                         <div class="input-field">
                             <p>CVC/CVV</p>

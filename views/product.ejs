@@ -3,6 +3,7 @@
     <head>
         <title>Profile</title>
         <link href="/css/product.css" rel="stylesheet" type="text/css" />
+        <link href="/css/nav.css" rel="stylesheet" type="text/css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
     <body>
         <nav class="sticky-navbar">
             <div class="title">
-                <a href="/"><h1>E-commerce</h1></a>
+                <a href="/"><h1>STEAK</h1></a>
             </div>
             <div class="search">
                 <input class="search-bar" id="searchBar" type="text" placeholder="Search...">
@@ -51,17 +52,19 @@
                             <p class="game-status">In Cart</p>
                             <img class="game-img" src=[/= game.img /]>
                             <div class="game-info">
-                                <h3>[/= game.name /]</h3>
-                                <p class="genres">Genres: [/= game.genre /]</p>
+                                <div class="basic-info">
+                                    <h3>[/= game.name /]</h3>
+                                    <p class="genres">Genres: [/= game.genre /]</p>
+                                </div>
+                                <div class="description-container">
+                                    <h4>Description</h4>
+                                    <p class="description">[/= game.desc /]</p>
+                                </div>
                                 <div class="buy-info">
                                     <p class="game-price">$[/= game.price /]</p>
                                     <button class="buy-btn">Add to Cart</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="description-container">
-                            <h4>Description</h4>
-                            <p class="description">[/= game.desc /]</p>
                         </div>
                     </div>
                 </section>
