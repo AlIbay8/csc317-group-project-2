@@ -58,6 +58,7 @@ body {
 }
 
 .success-box {
+    color: black;
     background-color: #8ae590;
     border: #387c59 5px solid;
 }

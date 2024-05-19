@@ -16,7 +16,7 @@ body {
 }
 
 .hero-banner {
-    background-image: url("https://www.beautylabinternational.com/wp-content/uploads/2020/03/Hero-Banner-Placeholder-Light-1024x480-1.png");
+    background-image: url("../resources/steak_banner.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: auto 100%; /* Resize the background image to cover the entire container */
