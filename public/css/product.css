@@ -106,6 +106,12 @@ input.search-bar{
     text-align: center;
 }
 
+.img-container {
+    height: 100%;
+    width: 100%;
+    min-width: 50%;
+}
+
 .game-img {
     height: auto;
     width: 100%;
