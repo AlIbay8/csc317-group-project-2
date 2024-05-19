@@ -60,8 +60,12 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
         console.log("before sort: ", result)
 
-        result.sort((a, b) => {
-            return a.date_published < b.date_published;
+        result.sort((a,b) => {
+            if (a.date_published < b.date_published) {
+                return 1;  
+            } else {
+                return -1;
+            }
         })
 
         console.log("after sort: ", result)
