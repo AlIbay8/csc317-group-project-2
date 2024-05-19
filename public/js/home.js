@@ -58,11 +58,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
             cart = await cart_response.json()
         }
 
-        result.sort((a, b) => {
-            return a.date_published < b.date_published;
-        })
-        console.log(result);
-        
         for (let game of result) {
             let game_in_cart = cart.some(g => g.product_id==game.id)
             const clone = game_template.content.cloneNode(true);
