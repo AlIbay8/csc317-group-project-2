@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                 c_status.style.display = "inline-block";
             } else {
                 c_buy.addEventListener("click", () => {
+                    c_buy.disabled = true
                     fetch(`/cart/add/${game.id}`, {
                         method: 'POST'
                     }).then(response => {
@@ -102,6 +103,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                             c_status.style.display = "inline-block";
                             updateCartCount();
                         } else {
+                            c_buy.disabled = false
                             alert("Please log in to add games to cart.");
                         }
                     }).catch(err => alert(err));
