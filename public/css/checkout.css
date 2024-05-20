@@ -170,6 +170,10 @@ body {
     min-width: 10rem;
 }
 
+#expiryField {
+    max-width: 50%;
+}
+
 .input-field > input {
     width:100%;
     font-size: 2rem;
