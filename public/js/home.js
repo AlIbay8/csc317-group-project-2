@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                 result = result.filter((game) => {
                     let score = 0;
                     for (let word of filter_query) {
-                        if (game.developer.toLowerCase().includes(word) || game.genre.toLowerCase().includes(word)) {
+                        if (game.name.toLowerCase().includes(word) || game.developer.toLowerCase().includes(word) || game.genre.toLowerCase().includes(word)) {
                             score++;
                         }
                     }
