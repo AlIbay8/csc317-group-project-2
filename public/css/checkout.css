@@ -206,6 +206,7 @@ body {
     background-position: 25%;
     background-size: 330% 100%;
     width: 10rem;
+    min-height: 5rem;
 }
 
 @keyframes lighten {

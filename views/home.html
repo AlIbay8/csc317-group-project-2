@@ -38,7 +38,31 @@
         </nav>
         <section class="hero-banner"></section>
         <div class="body-container">
-            <section class="section-box">
+            <div class="sticky-container">
+                <section class="section-box filter-box" id="stickyElement">
+                    <div class="section-header">
+                        <h2 class="section-title">Filter</h2>
+                    </div>
+                    <div class="section-content">
+                        <button class="submit-btn" id="resetFilterBtn">Reset Filters</button>
+                        <h3>Sort:</h3>
+                        <select id="sortFilter" autocomplete="off">
+                            <option value="new-old" selected>Newest to Oldest</option>
+                            <option value="old-new">Oldest to Newest</option>
+                            <option value="low-high">Lowest to Highest Price</option>
+                            <option value="high-low">Highest to Lowest Price</option>
+                        </select>
+                        <h3>Filter Keyword:</h3>
+                        <div class="input-field">
+                            <input type="text" id="keywordInput" placeholder="Developer, genre, etc.">
+                            <button class="submit-btn" id="keywordBtn">Submit Keywords</button>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+            
+            <section class="section-box game-box">
                 <div class="section-header">
                     <h2 class="section-title">Games</h2>
                 </div>
