@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     search_btn.addEventListener("click", () => {
         const search_bar = document.getElementById("searchBar")
         let query = search_bar.value.toLowerCase().split(" ")
-        console.log(query)
+        if (search_bar.value=="") {
+            return
+        }
+        
         fetch("/game/all").then((response) => response.json()).then((games) => {
             let result = games.reduce((fit, curr) => {
                 let score = 0;
